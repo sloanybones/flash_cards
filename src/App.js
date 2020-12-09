@@ -24,10 +24,21 @@ class App extends React.Component {
   }
   
   
+  addCard = (card) => {
+    let newCard = {
+      id: Math.random(),
+      question: card.question,
+      answer: card.answer
+  };
+  let cards = [...this.state.cards, newCard];
+    this.setState({ cards: cards});
+
+  }
   
-  
-  
-  
+  removeCard = (id) => {
+    let cards = this.state.cards.filter((card) => card.id !== id);
+    this.setState({ cards });
+  };
   
   
   
@@ -40,8 +51,13 @@ class App extends React.Component {
     return (
       <Container>
         <Header as= "h1">Flash Cards</Header>
-        <CardForm/>
-        <CardList cards={this.state.cards} />
+        <CardForm
+        addCardToState={this.addCard}
+        />
+        <CardList 
+        cards={this.state.cards}
+        remove={this.removeCard} 
+        />
 
       </Container>
     );

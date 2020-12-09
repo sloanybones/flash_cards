@@ -6,7 +6,7 @@ class CardForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.add(this.state);
+    this.props.addCardToState(this.state);
     this.setState({ question: "", answer: "",});
   }
   handleChange = (e) => {
@@ -19,7 +19,7 @@ class CardForm extends React.Component {
         <Form.Group widths="equal">
           <Form.Input 
             fluid 
-            label="question" 
+            label="Question" 
             placeholder="Your Question" 
             name="question" 
             value={this.state.question} 
@@ -27,7 +27,7 @@ class CardForm extends React.Component {
           />
           <Form.Input 
             fluid 
-            label="answer" 
+            label="Answer" 
             placeholder="Your Answer" 
             name="answer" 
             value={this.state.answer} 

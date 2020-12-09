@@ -10,16 +10,18 @@ const CardList = ({ cards }) => {
   header='Question'
   meta='Flash Card'
   description= {card.question}
-
+  
+  
   />
- 
+  
+  
   )}
   
   )};
 
 
 export default CardList;
-
+trash alternate
 
 
 
